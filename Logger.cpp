@@ -1,66 +1,16 @@
 /*
  * @Author: Tairan Gao
- * @Date:   2024-01-30 16:10:32
+ * @Date:   2024-01-30 17:17:32
  * @Last Modified by:   Tairan Gao
- * @Last Modified time: 2024-01-30 17:15:47
+ * @Last Modified time: 2024-01-30 17:18:11
  */
 
 #include <iostream>
-#include <string>
-#include <mutex>
-#include <stdint.h>
+#include <functional>
+#include <time.h>
+#include <string.h>
 
-
-
-class LogLevel {
-public:
-    enum {
-        UNKNOWN = 0,
-        DEBUG = 1,
-        INFO = 2,
-        WARN = 3,
-        ERROR = 4,
-        FATAL = 5
-    }
-    static const char* ToString(LogLevel::Level level);
-    static LogLevel::Level FromString(const std::string& str);
-};
-
-
-
-// represents a single logging event, holding all relevant information
-class LogEvent {
-public:
-    using Event_ptr = std::shared_ptr<LogEvent>;
-    LogEvent(Event_ptr logger, Loglevel::Level level, const char* file, int32_t line, uint32_t elapse, )
-
-private:
-    const char* m_file = nullptr;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class Logger; //responsible for taking LogEvents and writing them out to the desired destination
-class LogFormatter; // formats a LogEvent into a string based on a specified pattern
-class LogAppender; //an abstract base class that defines the interface for different log destinations
-class LoggerManager; // handle different loggers.
-
-
-
-
+#include "Logger.h"
 
 const char* LogLevel::ToString(LogLevel::Level level) {
     switch (expression)
